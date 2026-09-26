@@ -1,6 +1,5 @@
 package com.shopsmart.service;
 
-
 import com.shopsmart.config.SystemEnvironmentConfig;
 import com.shopsmart.model.Customer;
 import com.shopsmart.model.Order;
@@ -10,6 +9,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+/**
+ * Responsible for generating customer tax invoices and billing summaries.
+ * It uses StringBuilder for efficient output construction and String.format to
+ * keep the receipt layout readable and consistent.
+ */
 public class BillingService {
     public String generateTaxInvoice(Customer customer, Order order, double finalTotal) {
         StringBuilder sb = new StringBuilder();
@@ -31,8 +35,8 @@ public class BillingService {
         sb.append("Customer    : ").append(customer.getName()).append("\n");
         sb.append("Order ID    : ").append(order.getOrderId()).append("\n");
         sb.append("-----------------------------------------\n");
-        for (Product p : order.getProducts()) {
-            sb.append(String.format(" - %-10s : %s\n", p.getName(), currencyFmt.format(p.getPrice())));
+        for (Product product : order.getProducts()) {
+            sb.append(String.format(" - %-10s : %s\n", product.getName(), currencyFmt.format(product.getPrice())));
         }
         sb.append("-----------------------------------------\n");
         sb.append("Subtotal    : ").append(currencyFmt.format(finalTotal)).append("\n");

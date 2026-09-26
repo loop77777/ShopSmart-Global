@@ -1,6 +1,10 @@
 package com.shopsmart.model;
 
-
+/**
+ * Base class for all user roles in the system.
+ * It centralizes common profile details and forces subclasses to provide
+ * a role-specific dashboard representation.
+ */
 public abstract class User {
     private String userId;
     private String name;
@@ -14,7 +18,15 @@ public abstract class User {
 
     public abstract void getDashboardDetails();
 
-    public String getUserId() { return userId; }
-    public String getName() { return name; }
-    public String getEmail() { return email; }
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

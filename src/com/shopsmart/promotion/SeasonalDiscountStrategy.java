@@ -1,6 +1,8 @@
 package com.shopsmart.promotion;
 
-
+/**
+ * Seasonal discount strategy gives a 10% reduction during special offers.
+ */
 public class SeasonalDiscountStrategy implements DiscountStrategy {
     @Override
     public double calculateDiscountedPrice(double price) {

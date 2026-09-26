@@ -1,6 +1,8 @@
 package com.shopsmart.model;
 
-
+/**
+ * Product catalog item sold in the e-commerce platform.
+ */
 public class Product {
     private String productId;
     private String name;
@@ -12,7 +14,15 @@ public class Product {
         this.price = price;
     }
 
-    public String getProductId() { return productId; }
-    public String getName() { return name; }
-    public double getPrice() { return price; }
+    public String getProductId() {
+        return productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 }
